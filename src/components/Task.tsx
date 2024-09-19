@@ -4,7 +4,7 @@ import React from "react";
 interface TaskProps {
     task: string;
     id: string;
-    deleteTask: () => void;
+    deleteTask: (id: string) => void;
 }
 
 const Task: React.FC<TaskProps> = ({id, task, deleteTask}) => {
