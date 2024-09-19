@@ -8,7 +8,7 @@ interface TaskElement {
     task: string;
 }
 
-let App: React.FC = () => {
+const App: React.FC = () => {
 
     const [tasks, setTasks] = useState<TaskElement[]>([
         {id: "1", task: "Water the plants"},
@@ -26,13 +26,17 @@ let App: React.FC = () => {
         }
     };
 
+    const deleteTask = (id: string) => {
+        setTasks(tasks.filter((task) => task.id !== id));
+    };
+
     return (
         <div>
             <h2>To Do list:</h2>
             <AddTaskForm currentTask = {currentTask} setCurrentTask = {setCurrentTask} addTask = {addTask}/>
             <div>
-                {tasks.map((task) =>
-                    <Task key={task.id} id={task.id} task={task.task} deleteTask={deleteTask} />
+                {tasks.map((task) => (<Task key={task.id} id={task.id} task={task.task} deleteTask={deleteTask} />)
+
                 )}
             </div>
 

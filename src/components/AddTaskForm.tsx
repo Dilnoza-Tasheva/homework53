@@ -10,8 +10,8 @@ interface AddTaskFormProps {
 const AddTaskForm: React.FC<AddTaskFormProps> = ({currentTask, addTask, setCurrentTask}) => {
     return (
         <div className="add-task-btn">
-            <input type="text" placeholder="Add a new task" value={currentTask} />
-            <button type={"button"} onClick={addTask}>Add</button>
+            <input type="text" placeholder="Add a new task" value={currentTask} onChange={(e) => setCurrentTask(e.target.value) }/>
+            <button type="button" onClick={addTask}>Add</button>
         </div>
 
     );
