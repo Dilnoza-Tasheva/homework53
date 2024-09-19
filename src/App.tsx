@@ -31,10 +31,10 @@ const App: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="app">
             <h2>To Do list:</h2>
             <AddTaskForm currentTask = {currentTask} setCurrentTask = {setCurrentTask} addTask = {addTask}/>
-            <div>
+            <div className="task-list">
                 {tasks.map((task) => (<Task key={task.id} id={task.id} task={task.task} deleteTask={deleteTask} />)
 
                 )}
