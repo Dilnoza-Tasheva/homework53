@@ -3,8 +3,9 @@ import Task from "./components/Task.tsx";
 import './App.css'
 import React, {useState} from "react";
 
-interface TaskProps {
-
+interface TaskElement {
+    id: string;
+    task: string;
 }
 
 const App: React.FC = () => {
